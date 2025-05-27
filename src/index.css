@@ -1,0 +1,135 @@
+/* Importa as diretivas base, components e utilities do Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define variáveis CSS customizadas para temas claros e escuros usando @layer base */
+@layer base {
+  :root {
+    /* Cores principais do tema claro */
+    --background: 140 40% 98%;
+    --foreground: 140 10% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 10% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 10% 12%;
+
+    --primary: 142 41% 35%;
+    --primary-foreground: 140 40% 98%;
+
+    --secondary: 120 15% 75%;
+    --secondary-foreground: 140 10% 12%;
+
+    --muted: 120 15% 92%;
+    --muted-foreground: 140 5% 45%;
+
+    --accent: 200 60% 35%;
+    --accent-foreground: 140 40% 98%;
+
+    --destructive: 10 78% 54%;
+    --destructive-foreground: 140 40% 98%;
+
+    --border: 140 15% 85%;
+    --input: 140 15% 85%;
+    --ring: 142 41% 35%;
+
+    --radius: 0.5rem;
+
+    /* Variáveis específicas para sidebar no tema claro */
+    --sidebar-background: 140 40% 98%;
+    --sidebar-foreground: 140 10% 30%;
+    --sidebar-primary: 142 41% 35%;
+    --sidebar-primary-foreground: 140 40% 98%;
+    --sidebar-accent: 200 60% 35%;
+    --sidebar-accent-foreground: 140 40% 98%;
+    --sidebar-border: 140 15% 85%;
+    --sidebar-ring: 142 41% 35%;
+
+    --header-background: #9df3bc; /* Verde claro */
+  }
+
+  /* Sobrescreve as variáveis para o modo escuro */
+  .dark {
+    --background: 140 15% 12%;
+    --foreground: 140 20% 90%;
+
+    --card: 140 15% 15%;
+    --card-foreground: 140 20% 90%;
+
+    --popover: 140 15% 15%;
+    --popover-foreground: 140 20% 90%;
+
+    --primary: 142 41% 35%;
+    --primary-foreground: 140 40% 98%;
+
+    --secondary: 120 10% 25%;
+    --secondary-foreground: 140 20% 90%;
+
+    --muted: 140 10% 20%;
+    --muted-foreground: 140 20% 70%;
+
+    --accent: 200 60% 35%;
+    --accent-foreground: 140 40% 98%;
+
+    --destructive: 10 78% 54%;
+    --destructive-foreground: 140 40% 98%;
+
+    --border: 140 15% 25%;
+    --input: 140 15% 25%;
+    --ring: 142 41% 35%;
+
+    --sidebar-background: 140 15% 12%;
+    --sidebar-foreground: 140 20% 80%;
+    --sidebar-primary: 142 41% 35%;
+    --sidebar-primary-foreground: 140 40% 98%;
+    --sidebar-accent: 200 60% 35%;
+    --sidebar-accent-foreground: 140 40% 98%;
+    --sidebar-border: 140 15% 25%;
+    --sidebar-ring: 142 41% 35%;
+  }
+}
+
+/* Aplica estilos globais base usando Tailwind */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+}
+
+/* Define componentes utilitários customizados usando Tailwind */
+@layer components {
+  .eco-card {
+    @apply bg-card rounded-lg border shadow-sm p-4 transition-all hover:shadow-md;
+  }
+  
+  .eco-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}
+
+header {
+  background-color: var(--header-background) !important;
+}
